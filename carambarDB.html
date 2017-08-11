@@ -3,10 +3,7 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title></title>
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>CarambarDB - Tell me a joke</title>
     <link rel="stylesheet" href="">
     <link rel="shortcut icon" href="">
 </head>
@@ -16,14 +13,15 @@
 
     <button onclick="tellJoke()">Tell me a joke!</button>
 
-    <p id="jokeBoxQ"></p>
+    <p id="jokeBox"></p>
 
     <!-- SCRIPTS -->
     <!-- Example: <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script> -->
 
     <script>
     function tellJoke() {
-        document.getElementById("jokeBoxQ").innerHTML = "<p><strong>Q:</strong> Quel est le comble pour un dentiste?</p><p><strong>A:</strong> Vivre dans un palais</p>";
+        document.getElementById("jokeBox").innerHTML = "";
+        document.getElementById("jokeBox").innerHTML = "<p><strong>Q:</strong> Quel est le comble pour un dentiste?</p><p><strong>A:</strong> Vivre dans un palais</p>";
     }
     </script>
 
