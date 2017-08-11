@@ -12,7 +12,7 @@
     <h1>Carambar joke generator</h1>
 
     <button onclick="tellJoke()">Tell me a joke!</button>
-
+    <p />
     <div id="jokeBox"></div>
 
     <!-- SCRIPTS -->
@@ -20,7 +20,9 @@
 
     <script>
 
-    // Load carambarDB jokes in our local JSON file by making an HTTP request to our local server
+    /* Load carambarDB jokes in our local JSON file by making an HTTP request
+    *  to our local server
+    */
     function loadJSON(callback){
         var xobj = new XMLHttpRequest();
             xobj.overrideMimeType("application/json");
@@ -34,13 +36,24 @@
         xobj.send(null);
     }
 
+    /**
+    * Returns a random integer between min (inclusive) and max (inclusive)
+    * Using Math.round() will give you a non-uniform distribution!
+    */
+    function getRandomInt(min, max) {
+        min = Math.ceil(min);
+        max = Math.floor(max);
+        return Math.floor(Math.random() * (max - min)) + min; //The maximum is exclusive and the minimum is inclusive
+}
+
     function tellJoke() {
         loadJSON(function(response) {
-            // Parse JSON string into object
-            var jokes = JSON.parse(response);
+            var jokes = JSON.parse(response); // Parse JSON string into object
+            var randomInt = getRandomInt(0, jokes.jokes.length);
+            document.getElementById("jokeBox").innerHTML = "";
+            document.getElementById("jokeBox").innerHTML = jokes.jokes[randomInt];
         });
-        document.getElementById("jokeBox").innerHTML = "";
-        document.getElementById("jokeBox").innerHTML = "<p><strong>Q:</strong> Quel est le comble pour un dentiste?</p><p><strong>A:</strong> Vivre dans un palais</p>";
+
     }
     </script>
 
