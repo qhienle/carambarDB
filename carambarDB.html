@@ -13,12 +13,27 @@
 
     <button onclick="tellJoke()">Tell me a joke!</button>
 
-    <p id="jokeBox"></p>
+    <div id="jokeBox"></div>
 
     <!-- SCRIPTS -->
     <!-- Example: <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script> -->
 
     <script>
+
+    // Load carambarDB jokes in our local JSON file by making an HTTP request to our local server
+    function loadJSON(callback){
+        var xobj = new XMLHttpRequest();
+            xobj.overrideMimeType("application/json");
+        xobj.open('GET', 'jokes.json', true);
+        xobj.onreadystatechange = function () {
+            if (xobj.readyState == 4 && xobj.status == "200") {
+                // Required use of an anonymous callback as .open will NOT return a value but simply returns undefined in asynchronous mode
+                callback(xobj.responseText);
+            };
+        };
+        xobj.send(null);
+    }
+
     function tellJoke() {
         document.getElementById("jokeBox").innerHTML = "";
         document.getElementById("jokeBox").innerHTML = "<p><strong>Q:</strong> Quel est le comble pour un dentiste?</p><p><strong>A:</strong> Vivre dans un palais</p>";
