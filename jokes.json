@@ -1,8 +1,8 @@
 {
     "jokes": [
-        { "id": 1, "Banane commence avec un B, mais normalement avec un N." },
-        { "id": 2, "<strong>Q:</strong> Pourquoi les taureaux sont toujours tristes?<br /><strong>A:</strong> Parce que leurs femmes sont vaches!" },
-        { "id": 3, "<strong>Q:</strong> Que dit un canard anglophone?<br /><strong>A:</strong> corner-corner" },
-        { "id": "n", "<strong>Q:</strong><br /><strong>A:</strong>" }
+        "Banane commence avec un B, mais normalement avec un N.",
+        "<strong>Q:</strong> Pourquoi les taureaux sont toujours tristes?<br /><strong>A:</strong> Parce que leurs femmes sont vaches!",
+        "<strong>Q:</strong> Que dit un canard anglophone?<br /><strong>A:</strong> corner-corner",
+        "<strong>Q:</strong> Comment reconnait-on les avions portugais?<br /><strong>A: Ils ont du poil sous les ailes.</strong>"
     ]
 }

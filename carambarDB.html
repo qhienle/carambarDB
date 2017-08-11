@@ -35,6 +35,10 @@
     }
 
     function tellJoke() {
+        loadJSON(function(response) {
+            // Parse JSON string into object
+            var jokes = JSON.parse(response);
+        });
         document.getElementById("jokeBox").innerHTML = "";
         document.getElementById("jokeBox").innerHTML = "<p><strong>Q:</strong> Quel est le comble pour un dentiste?</p><p><strong>A:</strong> Vivre dans un palais</p>";
     }
